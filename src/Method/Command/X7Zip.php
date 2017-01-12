@@ -38,7 +38,7 @@ class X7Zip extends AbstractCommandMethod
         $this->checkSupport($format);
 
         $this->getFilesystem()->mkdir($target);
-        $command = '7z x -y '.escapeshellarg($file).' -o'.$target;
+        $command = '7z x -y '.escapeshellarg($file).' -o'.escapeshellarg($target);
 
         $exitCode = $this->executeCommand($command);
 
